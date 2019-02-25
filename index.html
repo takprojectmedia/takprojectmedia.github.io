@@ -257,5 +257,25 @@ var swiper = new Swiper('.main-referans', {
     },
 });
 </script>
+
+<script>
+    $(window).resize(function() {
+    if ($(window).width() < 1050) {
+        $('.home-text h3').removeClass('fadeInUp wow');
+        $('.home-text h1').removeClass('fadeInUp wow');
+        $('.home-hakkimizda h3').removeClass('fadeInUp wow');
+        $('.home-hakkimizda p').removeClass('fadeInUp wow');
+        $('.home-hizmetlerimiz-text h3').removeClass('fadeInUp wow');
+        $('.chiller-box h4').removeClass('fadeInUp wow');
+        $('.rooftop-box h4').removeClass('fadeInUp wow');
+        $('.chiller-box img').removeClass('fadeInUp wow');
+        $('.rooftop-box img').removeClass('fadeInUp wow');
+        $('.referans-title span').removeClass('fadeInUp wow');
+        $('.refer li').removeClass('fadeInUp wow');
+        $('.contact .container h2').removeClass('fadeInUp wow');
+        $('.contact .contact-info li').removeClass('fadeInUp wow');
+    } else {
+    }
+}).resize();</script>
 </body>
 </html>
