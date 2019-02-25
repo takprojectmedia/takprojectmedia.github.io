@@ -36,7 +36,26 @@
 </head>
 <body>
 
-<body class="hero-anime">
+    <div class="preloader">
+        <svg class="filter" version="1.1">
+            <defs>
+              <filter id="gooeyness">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -10" result="gooeyness" />
+                <feComposite in="SourceGraphic" in2="gooeyness" operator="atop" />
+              </filter>
+            </defs>
+          </svg>
+        <div class="dots">
+          <div class="dot mainDot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+    </div>
+
+<div class="hero-anime">
     <div class="navigation-wrap bg-light start-header start-style">
         <div class="container">
             <div class="row">
@@ -75,7 +94,7 @@
             </div>
         </div>
     </div>
-</body>
+</div>
 
 <div class="home-slider" id="anasayfa" style="position: relative;">
     <div id="overlay"></div>
@@ -204,6 +223,7 @@
     new WOW().init();
 </script>
 <script src="js/main.js"></script>
+<script src="js/preloader.js"></script>
 
 <script>
     jQuery(document).ready(function($) {
