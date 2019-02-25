@@ -847,6 +847,7 @@ section.main-referanslar {
 
 .contact .container {
     z-index: 50;
+    position: relative;
 }
 
 .contact h2 {
