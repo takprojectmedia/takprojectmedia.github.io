@@ -447,6 +447,7 @@ body {
 
 .hiz-box a {
     color: #fff;
+    text-decoration: none;
 }
 
 .hiz-box a:hover {
