@@ -25,6 +25,11 @@ body {
     background-image: url(img/next.svg);
 }
 
+#scrollbox {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
 
 /* #Navigation
 ================================================== */
