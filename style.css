@@ -1,0 +1,710 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=devanagari,latin-ext');
+
+/* #Primary
+================================================== */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: #212112;
+    background-color: #f8f9fa;
+    overflow-x: hidden;
+    transition: all 200ms linear;
+}
+
+.swiper-button-prev {
+    background-image: url(img/prev.svg);
+}
+
+.swiper-button-next {
+    background-image: url(img/next.svg);
+}
+
+
+/* #Navigation
+================================================== */
+
+.start-header {
+    opacity: 1;
+    transform: translateY(0);
+    padding: 10px 0;
+    box-shadow: 0 10px 30px 0 rgba(138, 155, 165, 0.15);
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.start-header.scroll-on {
+    box-shadow: 0 5px 10px 0 rgba(138, 155, 165, 0.15);
+    padding: 5px 0;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    position: fixed;
+}
+
+.start-header.scroll-on .navbar-brand img {
+    height: 45px;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.navigation-wrap {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.navbar {
+    padding: 0;
+}
+
+.navbar-brand img {
+    height: 52px;
+    width: auto;
+    display: block;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.navbar-toggler {
+    float: right;
+    border: none;
+    padding-right: 0;
+}
+
+.navbar-toggler:active,
+.navbar-toggler:focus {
+    outline: none;
+}
+
+.navbar-light .navbar-toggler-icon {
+    width: 24px;
+    height: 17px;
+    background-image: none;
+    position: relative;
+    border-bottom: 1px solid #000;
+    transition: all 300ms linear;
+}
+
+.navbar-light .navbar-toggler-icon:after,
+.navbar-light .navbar-toggler-icon:before {
+    width: 24px;
+    position: absolute;
+    height: 1px;
+    background-color: #000;
+    top: 0;
+    left: 0;
+    content: '';
+    z-index: 2;
+    transition: all 300ms linear;
+}
+
+.navbar-light .navbar-toggler-icon:after {
+    top: 8px;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
+    transform: rotate(45deg);
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
+    transform: translateY(8px) rotate(-45deg);
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+    border-color: transparent;
+}
+
+.nav-link {
+    color: #212121 !important;
+    font-weight: 500;
+    transition: all 200ms linear;
+}
+
+.nav-item:hover .nav-link {
+    color: #00b6b5 !important;
+}
+
+.nav-item.active .nav-link {
+    color: #777 !important;
+}
+
+.nav-link {
+    position: relative;
+    padding: 5px 0 !important;
+    display: inline-block;
+}
+
+.nav-item:after {
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    content: '';
+    background-color: #00b6b5;
+    opacity: 0;
+    transition: all 200ms linear;
+}
+
+.nav-item:hover:after {
+    bottom: 0;
+    opacity: 1;
+}
+
+.nav-item.active:hover:after {
+    opacity: 0;
+}
+
+.nav-item {
+    position: relative;
+    transition: all 200ms linear;
+}
+
+.nav-item .dropdown-menu {
+    transform: translate3d(0, 10px, 0);
+    visibility: hidden;
+    opacity: 0;
+    max-height: 0;
+    display: block;
+    padding: 0;
+    margin: 0;
+    transition: all 200ms linear;
+}
+
+.nav-item.show .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    max-height: 999px;
+    transform: translate3d(0, 0px, 0);
+}
+
+.dropdown-menu {
+    padding: 10px !important;
+    margin: 0;
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: #212121;
+    background-color: #fcfaff;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0 5px 10px 0 rgba(138, 155, 165, 0.15);
+    transition: all 200ms linear;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.dropdown-item {
+    padding: 3px 15px;
+    color: #212121;
+    border-radius: 2px;
+    transition: all 200ms linear;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+    color: #fff;
+    background-color: rgba(129, 103, 169, .6);
+}
+
+/* #Media
+================================================== */
+
+@media (max-width: 767px) {
+    .nav-item:after {
+        display: none;
+    }
+
+    .nav-item::before {
+        position: absolute;
+        display: block;
+        top: 15px;
+        left: 0;
+        width: 11px;
+        height: 1px;
+        content: "";
+        border: none;
+        background-color: #000;
+        vertical-align: 0;
+    }
+
+    .dropdown-toggle::after {
+        position: absolute;
+        display: block;
+        top: 10px;
+        left: -23px;
+        width: 1px;
+        height: 11px;
+        content: "";
+        border: none;
+        background-color: #000;
+        vertical-align: 0;
+        transition: all 200ms linear;
+    }
+
+    .dropdown-toggle[aria-expanded="true"]::after {
+        transform: rotate(90deg);
+        opacity: 0;
+    }
+
+    .dropdown-menu {
+        padding: 0 !important;
+        background-color: transparent;
+        box-shadow: none;
+        transition: all 200ms linear;
+    }
+
+    .dropdown-toggle[aria-expanded="true"]+.dropdown-menu {
+        margin-top: 10px !important;
+        margin-bottom: 20px !important;
+    }
+}
+
+
+/***************** ANASAYFA *******************/
+
+
+
+/*************** ANASAYFA OVERLAY ************************/
+
+#overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2;
+}
+
+/****************** ANASAYFA *******************/
+
+.home-slider {
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+}
+
+.home-slider img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    background-repeat: no-repeat;
+}
+
+.home-text {
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+}
+
+.home-text h1 {
+    font-size: 25px;
+}
+
+.home-text h3 {
+    font-size: 40px;
+}
+
+.home-text h5 {
+    text-align: left;
+    margin-bottom: 45px;
+}
+
+.home-text p {
+    text-align: left;
+}
+
+/****************** HAKKIMIZDA *******************/
+
+.home-hakkimizda {
+    background-image: url(img/hakkimizdav2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.home-hakkimizda h3 {
+    font-weight: bold;
+
+}
+
+.home-hakkimizda img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    background-repeat: no-repeat;
+}
+
+.home-hakkimizda h3 {
+    font-size: 40px;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.hakkimizda-desc {
+    width: 55%;
+    font-size: 17px;
+}
+
+/****************** HİZMETLERİMİZ *******************/
+
+.home-hizmetlerimiz {
+    background-image: url('img/hizmetlerimiz.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-hizmetlerimiz::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: .85;
+}
+
+.home-hizmetlerimiz img {
+    object-fit: cover;
+    background-repeat: no-repeat;
+}
+
+.home-hizmetlerimiz-text {
+    position: relative;
+    z-index: 50;
+    padding: 25px 0;
+}
+
+.home-hizmetlerimiz-text h3 {
+    font-size: 40px;
+    font-weight: bold;
+    position: relative;
+    text-align: center;
+    margin-bottom: 60px;
+    color: #fff;
+}
+
+.chiller-box img,
+.rooftop-box img {
+    width: 85%;
+    height: 100%;
+}
+
+.chiller-box:hover,
+.rooftop-box:hover {
+    transition: all 0.3s;
+    Transform: scale(1.050);
+}
+
+.chiller-box,
+.rooftop-box h4 {
+    text-align: center;
+}
+
+.hiz-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chiller-box,
+.rooftop-box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hiz-box a {
+    color: #fff;
+}
+
+.hiz-box a:hover {
+    color: #00b6b5;
+    transition: all 0.3s;
+}
+
+.chiller-int img {
+    width: 100%;
+}
+
+.chiller-int h3 {
+    text-align: center;
+    padding-bottom: 5px;
+    border-bottom: 2px solid;
+}
+
+/****************** WHİTE WALL *******************/
+
+.white-wall {
+    width: 100%;
+    height: 100px;
+    background: #f8f9fa;
+}
+
+.wall-text {
+    text-align: center;
+    font-size: 90px;
+    margin-top: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+
+/********************************************************/
+
+/* This is Referans Css */
+
+section.main-referanslar {
+    padding: 50px 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+    background-color: #f5f5f5;
+}
+
+.main-referanslar .container {
+    position: relative;
+    top: 10%;
+}
+
+.main-referanslar .referans-title {
+    display: block;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.main-referanslar .main-referans {
+    margin-bottom: 50px;
+}
+
+.main-referanslar .main-referans .swiper-wrapper .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+.main-referanslar .main-referans .swiper-wrapper .swiper-slide img {
+    width: 150px;
+    object-fit: cover;
+}
+
+.refer {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+.refer li {
+    width: 23%;
+    height: auto;
+    font-size: 15px;
+    text-align: center;
+    color: #000;
+    border: 1px solid #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    flex-direction: column;
+    margin-right: 15px;
+    margin-bottom: 25px;
+}
+
+.refer li img {
+    width: 100px;
+    height: 50px;
+    margin-bottom: 10px;
+    object-fit: contain;
+}
+
+/******************** ILETISIM  *************************/
+
+.contact {
+    background-image: url(img/iletisim3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.contact::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    opacity: .85;
+    z-index: 1;
+}
+
+.contact .container {
+    z-index: 10;
+}
+
+.contact h2 {
+    display: block;
+    text-align: left;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    z-index: 50;
+    margin-bottom: 25px;
+}
+
+.contact .contact-info {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.contact .contact-info li {
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+
+
+/************************************** IC SAYFALAR  *******************************************/
+
+.page .title {
+    padding-top: 15%;
+}
+
+.page .title-text {
+    margin-bottom: 60px;
+    margin-top: 40px;
+}
+
+.page .title h3,
+.title-text h4 {
+    text-align: center;
+}
+
+.page .page-gorsel img {
+    width: 50%;
+    position: relative;
+    left: 25%;
+}
+
+.title-menu .block {
+    border: 2px solid #0000000f;
+    border-radius: 5px;
+    padding: 25px;
+    height: 100%;
+}
+
+.title-menu h5 {
+    text-align: center;
+    border-bottom: 2px solid #00bcbb;
+    padding-bottom: 5px;
+}
+
+.title-menu p {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+
+/******************************  IC SAYFALAR *******************************/
+
+.btn-iletisim {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.btn-iletisim a {
+    text-decoration: none;
+    color: #000;
+}
+
+.btn-iletisim a h5 {
+    display: inline-block;
+    border-bottom: 2px solid #00bcbb;
+    padding-bottom: 20px;
+}
+
+.btn-iletisim span {
+    display: inline-block;
+    border: 2px solid #c0d8da;
+    width: 150px;
+    text-align: center;
+    border-radius: 25px;
+    background: #00b5b4;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px;
+    margin-left: 10px;
+}
+
+/****************** FOOTER *******************/
+
+.footer {
+    background-color: #f8f9fa;
+    font-weight: 500;
+    color: #000;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    z-index: 4;
+    position: relative;
+}
+
+.footer img {
+    width: 50px;
+    background-repeat: no-repeat;
+}
+
+.footer .col-md-4,
+.footer .col-md-8 {
+    line-height: 4;
+}
+
+
+.page {
+    width: 100%;
+    height: 100vh;
+    background-color: #f8f9fa;
+}

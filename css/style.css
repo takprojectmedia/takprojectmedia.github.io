@@ -1,0 +1,11 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.header-one{
+    background: #000;
+    width: 1000px;
+}
+
