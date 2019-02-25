@@ -135,6 +135,10 @@
         width: 85px
     }
 
+    .refer {
+    	justify-content: space-between;
+    }
+
     .refer li {
         width: 45%;
         margin: 0;
